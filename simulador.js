@@ -11,4 +11,9 @@ function calcular(){
 
     let spnDisponible = document.getElementById("spnDisponible");
     spnDisponible.textContent = disponible;
+
+    let capacidadPago = calcularCapacidadPago(disponible).toFixed(2);
+
+    let spnCapacidadPago = document.getElementById("spnCapacidadPago");
+    spnCapacidadPago.textContent = capacidadPago;
 }

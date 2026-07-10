@@ -9,3 +9,7 @@ function calcularDisponible (ingresos,egresos){
     }
 }
 
+function calcularCapacidadPago (montoDisponible){
+    let total = (montoDisponible*0.5);
+    return total;
+}
