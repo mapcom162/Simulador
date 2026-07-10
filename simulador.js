@@ -36,4 +36,9 @@ function calcular(){
 
     let spnTotalPrestamo = document.getElementById("spnTotalPrestamo");
     spnTotalPrestamo.textContent = totalPagar;
+
+    let cuotaMensual = calcularCuotaMensual(totalPagar,plazo).toFixed(2);
+
+    let spnCuotaMensual = document.getElementById("spnCuotaMensual");
+    spnCuotaMensual.textContent = cuotaMensual;
 }
