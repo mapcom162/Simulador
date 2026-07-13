@@ -12,10 +12,10 @@ function calcular(){
     let spnDisponible = document.getElementById("spnDisponible");
     spnDisponible.textContent = disponible;
 
-    let capacidadPago = calcularCapacidadPago(disponible).toFixed(2);
+    let capacidadPago = calcularCapacidadPago(disponible);
 
     let spnCapacidadPago = document.getElementById("spnCapacidadPago");
-    spnCapacidadPago.textContent = capacidadPago;
+    spnCapacidadPago.textContent = capacidadPago.toFixed(2);
 
     let cmptxtMonto = document.getElementById("txtMonto");
     let monto = parseFloat(cmptxtMonto.value);
@@ -37,8 +37,18 @@ function calcular(){
     let spnTotalPrestamo = document.getElementById("spnTotalPrestamo");
     spnTotalPrestamo.textContent = totalPagar;
 
-    let cuotaMensual = calcularCuotaMensual(totalPagar,plazo).toFixed(2);
+    let cuotaMensual = calcularCuotaMensual(totalPagar,plazo);
 
     let spnCuotaMensual = document.getElementById("spnCuotaMensual");
-    spnCuotaMensual.textContent = cuotaMensual;
+    spnCuotaMensual.textContent = cuotaMensual.toFixed(2);
+
+    let resultado =  aprobarCredito(capacidadPago,cuotaMensual);
+
+    let spnEstadoCredito = document.getElementById("spnEstadoCredito");
+
+    if (resultado == true){
+        spnEstadoCredito.textContent = "CREDITO APROBADO"
+    } else {
+        spnEstadoCredito.textContent = "CREDITO RECHAZADO"
+    }
 }
